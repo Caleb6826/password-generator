@@ -73,4 +73,57 @@ function generatePassword() {
     userChoices = upperCase.concat(numbers, special);
     console.log(userChoices);
   }
+   // 2 true options
+   else if (confirmLower && confirmUpper) {
+    userChoices = lowerCase.concat(upperCase);
+    console.log(userChoices);
+  }
+  else if (confirmLower && confirmNumber) {
+    userChoices = lowerCase.concat(numbers);
+    console.log(userChoices);
+  }
+  else if (confirmLower && confirmSpecial) {
+    userChoices = lowerCase.concat(special);
+    console.log(userChoices);
+  }
+  else if (confirmUpper && confirmNumber) {
+    userChoices = upperCase.concat(numbers);
+    console.log(userChoices);
+  }
+  else if (confirmUpper && confirmSpecial) {
+    userChoices = upperCase.concat(special);
+    console.log(userChoices);
+  }
+  else if (confirmNumber && confirmSpecial) {
+    userChoices = numbers.concat(special);
+    console.log(userChoices);
+  }
+  // 1 true option
+  else if (confirmLower) {
+    userChoices = lowerCase;
+    console.log(userChoices);
+  }
+  else if (confirmUpper) {
+    userChoices = upperCase.concat;
+    console.log(userChoices);
+  }
+  else if (confirmNumber) {
+    userChoices = numbers;
+    console.log(userChoices);
+  }
+  else if (confirmSpecial) {
+    userChoices = special;
+    console.log(userChoices);
+  };
+  // Loop for selection
+  for (var i = 0; i < passwordLength; i++) {
+    var allChoices = userChoices[Math.floor(Math.random() * userChoices.length)];
+    passwordBlank.push(allChoices);
+    console.log(allChoices);
+  }
+
+  // Join and return the password 
+  var password = passwordBlank.join("");
+  console.log("Your Pasword is: " + password);
+  return password;
   }
